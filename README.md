@@ -5,6 +5,21 @@ Ex. (209) - The general logic gate based on a map, is presented here in three pr
 
 The previous example showed independent scattered functions for the logic gate functions. However, how about an optimization that makes a shortcut that melts all the previously described functions into one? Well, this code defines two 3×3 matrices a and b as well as an empty matrix c. It then performs bitwise logical operations between the corresponding elements of matrices a and b based on a specified operation code t using a function called g. The result of these operations is stored in matrix c. Next, it prints the contents of matrix c in a human-readable format. In detail, the matrices a and b are 3×3 arrays of binary values. The code initializes an empty matrix c, and two variables n and m to store the dimensions of matrix a. It also initializes an empty string r to store the formatted result. A nested for-loop is used to iterate through the elements of matrices a and b, perform the logical operation using the g function, and store the result in the matrix c. It also constructs a string r that represents the elements of matrix c separated by spaces and newlines. The g function takes three arguments: a, b, and t. It uses a predefined matrix h to perform bitwise logical operations based on the value of t and returns the result. The matrix h is a lookup table that specifies the results of different logical operations (AND, NAND, OR, NOR, XOR, XNOR) for different combinations of a and b. The code concludes by printing the string r, which represents the resulting matrix c. Additionally, there are comments in the code that explain the meanings of the values of t and provide a visual representation of the logical operations and their results in a tabular format.
 
+```text
+Table:
+________________________________
+|       |   | N |   |   |   | X |
+| Input | A | A |   | N | X | N |
+|       | N | N | O | O | O | O |
+| a | b | D | D | R | R | R | R |
+---------------------------------
+| 0 | 0 | 0 | 1 | 0 | 1 | 0 | 1 |
+| 0 | 1 | 0 | 1 | 1 | 0 | 1 | 0 |
+| 1 | 0 | 0 | 1 | 1 | 0 | 1 | 0 |
+| 1 | 1 | 1 | 0 | 1 | 0 | 0 | 1 |
+---------------------------------
+```
+
 ## Example in Python:
 
 ```python
@@ -45,18 +60,6 @@ for i in range(n):
         r += str(c[i][j]) + " "
 
 print(r)
-
-# ________________________________
-# |       |   | N |   |   |   | X |
-# | Input | A | A |   | N | X | N |
-# |       | N | N | O | O | O | O |
-# | a | b | D | D | R | R | R | R |
-# ---------------------------------
-# | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 1 |
-# | 0 | 1 | 0 | 1 | 1 | 0 | 1 | 0 |
-# | 1 | 0 | 0 | 1 | 1 | 0 | 1 | 0 |
-# | 1 | 1 | 1 | 0 | 1 | 0 | 0 | 1 |
-# ---------------------------------
 ``` 
 
 ```text
